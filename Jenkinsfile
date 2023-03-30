@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'source /home/reddymr && pip install -r requirements.txt'
+                sh '/home/reddymr && pip install -r requirements.txt'
             }
         }
 
