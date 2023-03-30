@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh '/home/jenkins && pip install -r requirements.txt'
+                sh ' sudo chown -R jenkins:jenkins /home/jenkins && pip install -r requirements.txt'
             }
         }
 
