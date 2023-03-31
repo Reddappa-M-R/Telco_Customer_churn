@@ -26,10 +26,15 @@ pipeline {
             }
         }
 
-        stage('Deploy model') {
+        stage('Docker image') {
             steps {
-                sh 'docker build -t telco:latest .'
-                sh 'docker run -p 8502:8502 --name telco telco:latest'
+                sh 'docker build -t telco_customer_churn:latest .'
+            }
+        }
+
+        stage('Docker container and deploy') {
+            steps {
+                sh 'docker run -p 8502:8502 --name telco_customer_churn telco_customer_churn:latest'
             }
         }
     }
