@@ -28,8 +28,8 @@ pipeline {
 
         stage('Deploy model') {
             steps {
-                sh 'docker build . -t telco/streamlit'
-                sh 'docker run -p 8502:8502 --name telco telco/streamlit'
+                sh 'docker build -t telco:latest .'
+                sh 'docker run -p 8502:8502 --name telco telco:latest'
             }
         }
     }
