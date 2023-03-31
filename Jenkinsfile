@@ -16,19 +16,19 @@ pipeline {
 
         stage('Train model') {
             steps {
-                sh 'train.py'
+                sh 'python3 train.py'
             }
         }
 
         stage('Evaluate model') {
             steps {
-                sh 'evaluate.py'
+                sh 'python3 evaluate.py'
             }
         }
 
         stage('Deploy model') {
             steps {
-                sh 'deploy.py'
+                sh 'python3 deploy.py'
             }
         }
     }
