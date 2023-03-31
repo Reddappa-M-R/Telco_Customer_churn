@@ -1,7 +1,7 @@
 FROM ubuntu:latest
-COPY . /home/reddymr
+COPY . /app
 EXPOSE 8501
-WORKDIR /home/reddymr
+WORKDIR /app
 RUN pip install -r requirements.txt
 
 #ENTRYPOINT ["streamlit", "run"]
