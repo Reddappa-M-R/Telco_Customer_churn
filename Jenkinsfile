@@ -28,7 +28,8 @@ pipeline {
 
         stage('Deploy model') {
             steps {
-                sh 'streamlit run App.py'
+                sh 'docker build . -t telco/streamlit'
+                sh 'docker run -p 8502:8502 --name telco telco/streamlit'
             }
         }
     }
