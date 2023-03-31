@@ -28,7 +28,7 @@ pipeline {
 
         stage('Deploy model') {
             steps {
-                sh 'python3 streamlit run App.py'
+                sh 'streamlit run python3 App.py'
             }
         }
     }
