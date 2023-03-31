@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 # Load the telco customer churn dataset
-df = pd.read_csv('Data\Data.csv')
+df = pd.read_csv('Data.csv')
 
 # Convert categorical variables to dummy variables
 df = pd.get_dummies(df, columns=['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines',
