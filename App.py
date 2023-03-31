@@ -21,7 +21,7 @@ classifier = pickle.load(model)
 st.title("Boston_Housing_Price")
 st.header("Predicting Price")
 
-df = pd.read_csv("Data\Data.csv")
+df = pd.read_csv("Data.csv")
 df = df.head()
 
 nav = st.sidebar.radio("Navigation", ["Home","Prediction","About us"])
