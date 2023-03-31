@@ -1,10 +1,9 @@
-FROM ubuntu:latest
-COPY . /app
-EXPOSE 8502
-WORKDIR /app
-#RUN pip3 install -r requirements.txt
-pip install streamlit
+FROM python:3
+COPY . /usr/app
+EXPOSE 8501
+WORKDIR /usr/app/
+RUN pip install -r requirements.txt
 
-#ENTRYPOINT ["streamlit", "run"]
+ENTRYPOINT ["streamlit", "run"]
 
-CMD ["streamlit", "run", "App.py"]
+CMD ["App.py"]
