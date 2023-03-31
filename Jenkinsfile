@@ -28,15 +28,8 @@ pipeline {
 
         stage('Deploy model') {
             steps {
-                sh 'streamlit run python3 App.py'
+                sh 'streamlit run App.py'
             }
-        }
-    }
-
-    post {
-        always {
-            junit 'test-results.xml'
-            archiveArtifacts 'model.pkl'
         }
     }
 }
